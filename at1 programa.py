@@ -1,3 +1,4 @@
+import sys
 print('-' * 20)
 print('MENU')
 print('-' * 20)
@@ -12,17 +13,17 @@ def main():
  while True:
   resposta1 = int(input(" Selecione sua opção:" ))
   if resposta1 ==1:
-   compras()
+   transação(compra)
   elif resposta1 ==2:
-   vendas()
+   transação(venda)
   elif resposta1 ==3:
    saldo()
   elif resposta1 ==4:
    print('saindo do programa')
-   quit()
+   sys.exit()
 
-#menu de compras
-def compras():
+#menu de transações
+def transação(tipo):
  print('-' * 20)
  print('MENU')
  print('-' * 20)
@@ -32,53 +33,25 @@ def compras():
  print('[2], - QUANTIDADE')
  print('[3], - VALOR')
  print('[4], - SAIR')
-resposta2 = input("insira  a sua opção")
-if resposta2 ==1:
-  nome_compra = input("insira o nome")
-elif resposta2 ==2:
-  quant_compra = int(input("insira a quantidade"))
+resposta = input("insira  a sua opção")
+if resposta ==1:
+  nome = input("insira o nome")
+elif resposta ==2:
+  quantidade = int(input("insira a quantidade"))
 else:
   print("valor incorreto")
-if resposta2 ==3:
-  preço_compra = int(input("insira o valor"))
+if resposta ==3:
+  preço = int(input("insira o valor"))
 else:
   print("valor incorreto")
-if resposta2 ==4:
-  quit()
-
-#menu de vendas
-def vendas():
- print('-' * 20)
- print('MENU')
- print('-' * 20)
- print()
- print('OPÇÕES', )
- print('[1], - NOME')
- print('[2], - QUANTIDADE')
- print('[3], - VALOR')
- print('[4], - SAIR')
-
-resposta3 = int(input("escolha sua opção"))
-if resposta3 ==1:
- nome_venda = input("insira o nome do produto")
-elif resposta3 ==2:
-   quant_venda = int(input("insira a quantidade"))
-else:
- print("valor invalido")
-if resposta3 ==3:
-   preço_venda = int(input("insira o valor"))
-else:
-  print("valor incorreto")
-if resposta3 ==4:
-   main()
+if resposta ==4:
+  main()
 
 # criando listas
+lista1 = list[nome]
 
-lista_compras = list["nomecompra", "preçocompra", "quantcompra"]
-lista_vendas = list["nome_venda", "preço_venda", "quant_venda"]
 
 #saldo
-totalvendas = quant_venda * preço_venda
-totalcompras = quant_compra * preço_compra
+
 def saldo():
- print("o saldo total é", totalvendas - totalcompras)
+ print("o saldo total é", total(compras) - total(vendas))
